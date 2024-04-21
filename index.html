@@ -266,18 +266,25 @@
 
       <div class="columns mt-6">
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">000</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-server"></i> Servers</span>
+          <p class="title has-text-weight-bold lined"><script>
+fetch('https://discord.com/api/v9/guilds/1222975072004739102/widget.json') // Замени {YOUR_BOT_ID} на ID своего бота
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('serverCount').textContent = data.members;
+  })
+  .catch(error => console.error('Ошибка при получении данных:', error));
+</script></p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-server"></i> Серверов</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <p class="title has-text-weight-bold lined">19</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-terminal"></i> Команд</span>
         </div>
 
         <div class="column has-text-centered">
           <p class="title has-text-weight-bold lined">000</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-terminal"></i> Commands</span>
-        </div>
-
-        <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">000</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Users</span>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Пользователей</span>
         </div>
       </div>
     </section>
@@ -288,13 +295,12 @@
       <div class="columns">
         <div class="column has-text-left">
           <p class="title has-text-weight-bold">
-            Ready to try <span class="blurple">[your bot]</span>?
+            Вы готовы попробовать <span class="blurple">ApexBot'a</span>?
           </p>
           <p class="subtitle mt-3 has-text-gray">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Жми на кнопку что-бы добавить нашего бота на сервер!
           </p>
-          <a href="#" class="button is-blurple is-medium"
+          <a href="https://ptb.discord.com/oauth2/authorize?client_id=1222975072004739102" class="button is-blurple is-medium"
             ><strong><i class="fa-solid fa-book"></i> Get Started</strong></a
           >
         </div>
@@ -320,8 +326,7 @@
         <p>
           <span class="has-text-weight-bold">[Your Bot]</span>
           <br />
-          &copy; <span id="cp-year"></span> Copyright [Bot Owner]. All Rights
-          Reserved.
+          &copy; <span id="cp-year"></span> Copyright. Все права защищены.
         </p>
 
         <p style="letter-spacing: 0.1em;" class="is-uppercase">
